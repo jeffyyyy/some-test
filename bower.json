@@ -1,0 +1,25 @@
+{
+  "name": "senior-practical",
+  "authors": [
+    "jeffyyyy <zy53work@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.8",
+    "angular-route": "~1.5.8",
+    "bootstrap": "~3.3.7",
+    "underscore": "~1.8.3",
+    "jquery": "~3.1.1"
+  }
+}
