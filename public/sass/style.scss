@@ -1,0 +1,78 @@
+$font-stack: 'Open Sans', sans-serif;
+$blue: #53c8eb;
+$header-grey: #d6dde4;
+$user-blue: #7b8da0;
+$white: #ffffff;
+$h3-color: #4c5e70;
+$subheader-color: #7b8da0;
+$seperator-color: #dae1e8;
+
+h1, h2, h3, h4 {
+  font-weight:bold;
+}
+.chart-blue {
+  color: $blue;
+}
+#search {
+  margin-left:20px;
+  background:$header-grey;
+}
+header {
+  background:$header-grey none repeat scroll 0 0;
+}
+.label.label-primary, .label.label-danger {
+  border-radius: 50%;
+  font-size: 9px;
+  left: 8px;
+  position: absolute;
+  top: -9px;
+}
+.circle-round {
+  border-radius:50%;
+}
+.circle-round.btn-primary {
+  color: $user-blue;
+}
+.white {
+  color: $white;
+}
+.bold{
+  font-weight:bold;
+}
+.header-top i.white {
+  color: $blue;
+}
+.fa-angle-down.white {
+  vertical-align: middle;
+}
+ul.header-top li .fa-bell {
+  margin-right:8px;
+}
+ul.header-top li {
+  padding: 0px 8px;
+}
+ul.header-top li:first-child {
+  border-right: 2px solid #bac7d4;
+}
+.thumbnail h3, .thumbnail h4, .working-hour h3 {
+  color:$h3-color;
+}
+.thumbnail h3 + p, .working-hour h3 + p {
+  color: $subheader-color;
+  font-size:13px;
+  margin-bottom:20px;
+}
+.working-hour .thumbnail {
+  padding:5px 15px 20px 15px;
+}
+hr {
+  border-top: 2px solid $seperator-color;
+}
+.clearfix {
+  clear:both;
+}
+/*
+body{
+  font-family: $font-stack;
+  background: #EFF3F6;
+}*/
