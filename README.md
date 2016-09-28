@@ -6,8 +6,9 @@ This is written for fun.
 
   - Written in MEAN stack
   - Lots of Charts
-  - Charts data is stored in remote MongoDB
-  - Very straight forward backend code to retrieve data from MongoDB
+  - Charts data is stored on remote MongoDB server (Welcome to take a look at the dummy data, recommend to use Robomongo v0.9)
+  - Very straight forward backend API to retrieve data from MongoDB
+  - Simple typehead function
 
 ## Prerequisites
 You must have the following installed:

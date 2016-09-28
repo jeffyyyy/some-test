@@ -1,6 +1,6 @@
 'use strict';
 
-var App = angular.module('TestApp', ['ngRoute', "chart.js", 'TestApp.controllers', 'TestApp.services', 'TestApp.filters']);
+var App = angular.module('TestApp', ['ngRoute', "chart.js", 'TestApp.controllers', 'TestApp.services', 'TestApp.filters', 'TestApp.factory']);
 
 App.config(['$routeProvider', function($routeProvider) {
     $routeProvider.

@@ -189,10 +189,44 @@ table.avatar-table h3{
   margin-bottom:10px;
 }
 .donut-inner {
-  margin-top: -145px;
+  margin-top: -141px;
   margin-bottom: 100px;
   text-align: center;
 }
 .donut-inner h3{
   margin-bottom:0;
+}
+.btn-none {
+  border:none;
+  background:none;
+}
+.dropdown-toggle.days-toggle {
+  font-size:18px;
+  font-weight:bold;
+}
+.canvas-holder {
+  width:180px;
+  height:180px;
+  margin:0 auto;
+}
+.typeheadlist {
+  position: absolute;
+  width: 100%;
+  top: 55px;
+  left: 20px;
+  background: white;
+  border: 1px solid $user-blue;
+  z-index:1000;
+}
+.typeheadlist li {
+  padding: 5px;
+}
+.typeheadlist li:hover {
+  background: $h3-color;
+  span {
+    color: white;
+  }
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

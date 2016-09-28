@@ -13,12 +13,21 @@
                         <p>Working hours</p>
                     </div>
                     <div class="pull-right">
-                        <h4 style="margin-top:25px;">THIS WEEK&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down bold"></i></h4>
+                        <div class="dropdown">
+                            <button class="btn btn-none dropdown-toggle days-toggle h3-color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{model.chart.filterText}}
+                                <i class="fa fa-angle-down bold"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#" class="h3-color" ng-click="redrawChart($event, 'chart', 7, 'linear', 'THIS WEEK')">THIS WEEK</a></li>
+                                <li><a href="#" class="h3-color" ng-click="redrawChart($event, 'chart', 14, 'linear', 'LAST TWO WEEKS')">LAST TWO WEEKs</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
-                    chart-series="series" chart-click="onClick" chart-colors="colors" chart-options="options" ></canvas>
+                <canvas class="chart chart-line" chart-data="model.chart.data" chart-labels="model.chart.labels"
+                    chart-series="model.chart.series" chart-click="onClick" chart-colors="model.chart.colors" chart-options="model.chart.options" ></canvas>
             </div>
         </div>
     </div>
@@ -34,11 +43,11 @@
                     <div class="col-sm-12">
                         <div class="column-height aligner">
                             <div class="pull-left text-center left-side aligner-item--fixed">
-                                <h3>{{totalWorkingHours}}</h3>
+                                <h3>{{model.people.totalWorkingHours}}</h3>
                                 <p>Working Hours</p>
                             </div>
                             <div class="pull-left right-side aligner-item--fixed">
-                                <canvas class="chart chart-line" chart-data="data4" chart-labels="labels4" chart-click="onClick" chart-colors="colors4" chart-options="options4" width="172" height="112"></canvas>
+                                <canvas class="chart chart-line" chart-data="model.people.data1" chart-labels="model.people.labels1" chart-click="onClick" chart-colors="model.people.colors1" chart-options="model.people.options1" width="172" height="112"></canvas>
                             </div>
                         </div>
                     </div>
@@ -48,11 +57,11 @@
                     <div class="col-sm-12">
                         <div class="column-height aligner">
                             <div class="pull-left text-center left-side aligner-item--fixed">
-                                <h3>{{totalConversations}}</h3>
+                                <h3>{{model.people.totalConversations}}</h3>
                                 <p>Conversations</p>
                             </div>
                             <div class="pull-left right-side aligner-item--fixed">
-                                <canvas class="chart chart-line" chart-data="data5" chart-labels="labels5" chart-click="onClick" chart-colors="colors5" chart-options="options5" width="172" height="55"></canvas>
+                                <canvas class="chart chart-line" chart-data="model.people.data2" chart-labels="model.people.labels2" chart-click="onClick" chart-colors="model.people.colors2" chart-options="model.people.options2" width="172" height="55"></canvas>
                             </div>
                         </div>
                     </div>
@@ -62,19 +71,13 @@
                     <div class="col-sm-12">
                         <div class="column-height aligner">
                             <div class="pull-left text-center left-side aligner-item--fixed">
-                                <h3>{{totalPeople}}</h3>
+                                <h3>{{model.people.totalPeople}}</h3>
                                 <p>People</p>
                             </div>
                             <div class="pull-left avatar-list aligner right-side aligner-item--fixed">
                             <div class="aligner-item--fixed">
                             <ul>
-                                <li><img src="images/avatar-thumbnail1.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail2.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail3.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail4.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail5.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail6.png" alt="" /></li>
-                                <li><img src="images/avatar-thumbnail7.png" alt="" /></li>
+                                <li ng-repeat="avatar in model.people.avatars"><img ng-src="{{avatar}}" alt="" /></li>
                             </ul>
                             </div>
                         </div>
@@ -91,11 +94,21 @@
                         <p>Working hours</p>
                     </div>
                     <div class="pull-right">
-                        <h4 style="margin-top:25px;">THIS WEEK&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down bold"></i></h4>
+                        <!--<h4 style="margin-top:25px;">THIS WEEK&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down bold"></i></h4>-->
+                        <div class="dropdown">
+                            <button class="btn btn-none dropdown-toggle days-toggle h3-color" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{model.chart1.filterText}}
+                                <i class="fa fa-angle-down bold"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#" class="h3-color" ng-click="redrawChart($event, 'chart1', 7, 'linear', 'THIS WEEK')">THIS WEEK</a></li>
+                                <li><a href="#" class="h3-color" ng-click="redrawChart($event, 'chart1', 14, 'linear', 'LAST TWO WEEKS')">LAST TWO WEEKs</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <canvas class="chart chart-line" chart-data="data1" chart-labels="labels1"
-                        chart-series="series1" chart-click="onClick" chart-colors="colors1" chart-options="options1" style="padding:10px;" height="180"></canvas>
+                <canvas class="chart chart-line" chart-data="model.chart1.data" chart-labels="model.chart1.labels"
+                        chart-series="model.chart1.series" chart-click="onClick" chart-colors="model.chart1.colors" chart-options="model.chart1.options" style="padding:10px;" height="180"></canvas>
             </div>
         </div>
     </div>
@@ -146,8 +159,10 @@
 
     <div class="row crunch-some-numbers">
         <div class="col-sm-12">
-            <h3>Crunch some Numbers</h3>
-            <p>See how your projects are progressing via the new statistics engine.</p>
+            <div class="clearfix">
+                <h3>Crunch some Numbers</h3>
+                <p>See how your projects are progressing via the new statistics engine.</p>
+            </div>
             <hr>
         </div>
         <div class="col-sm-4">
@@ -156,16 +171,19 @@
                     <div class="col-sm-10 col-sm-offset-1">
                         <h3>Client Hours</h3>
                         <p>Working hours</p>
-                        <canvas id="doughnut" class="chart chart-doughnut"
-                                chart-data="data2" chart-labels="labels2" chart-colors="colors2" height="180">
-                        </canvas>
-                        <div class="donut-inner">
-                            <h3 class="h3-color">{{totalHour2}}</h3>
-                            <p class="user-blue">working hours</p>
+
+                        <div class="canvas-holder">
+                            <canvas id="doughnut" class="chart chart-doughnut"
+                                    chart-data="model.chart2.data" chart-labels="model.chart2.labels" chart-colors="model.chart2.colors" height="180" width="180">
+                            </canvas>
+                            <div class="donut-inner">
+                                <h3 class="h3-color">{{model.chart2.totalHour}}</h3>
+                                <p class="user-blue">working hours</p>
+                            </div>
                         </div>
                         <br>
                             <ul class="h3-color">
-                                <li ng-repeat="label in labels2 track by $index"><span class="round-dot" style="background: {{colors2[$index]}};margin-right:10px;"></span><span class="h3-color">{{label}}</span>   <span class="pull-right h3-color bold">{{data2[$index]}}h</span></li>
+                                <li ng-repeat="label in model.chart2.labels track by $index"><span class="round-dot" style="background: {{model.chart2.colors[$index]}};margin-right:10px;"></span><span class="h3-color">{{label}}</span>   <span class="pull-right h3-color bold">{{model.chart2.data[$index]}}h</span></li>
                             </ul>
 
                     </div>
@@ -199,7 +217,7 @@
                         <p>I need Dollars</p>
                         <h2 class="text-center">$14,220</h2>
                         <br>
-                        <canvas class="chart chart-line" chart-data="data3" chart-labels="labels3" chart-click="onClick" chart-colors="colors3" chart-options="options3" height="180"></canvas>
+                        <canvas class="chart chart-line" chart-data="model.chart3.data" chart-labels="model.chart3.labels" chart-click="onClick" chart-colors="model.chart3.colors" chart-options="model.chart3.options" height="180"></canvas>
                         <br>
                         <a href="#/" class="grey-anchor">Export PDF</a>
                     </div>

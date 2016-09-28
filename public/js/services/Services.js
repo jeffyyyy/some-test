@@ -4,9 +4,9 @@ var Services = angular.module('TestApp.services', []);
 
 Services.service('Information', function($q, $http) {
     return {
-        getChart: function (chartIndex) {
+        getChart: function (chartIndex, chartType = 'linear', days = 7) {
             var defer = $q.defer();
-            $http.get('/api/chart?chart=' + (chartIndex != undefined ? chartIndex : '')).success(function (data) {
+            $http.get('/api/chart?chart=' + (chartIndex != undefined? chartIndex : '') + '&type=' + chartType + '&days=' + days).success(function (data) {
                 defer.resolve(data);
             });
             return defer.promise;
@@ -21,6 +21,13 @@ Services.service('Information', function($q, $http) {
         getPeople: function() {
             var defer = $q.defer();
             $http.get('/api/people').success(function (data) {
+                defer.resolve(data);
+            });
+            return defer.promise;
+        },
+        getTypehead: function(value) {
+            var defer = $q.defer();
+            $http.get('/api/typehead/' + value).success(function (data) {
                 defer.resolve(data);
             });
             return defer.promise;
