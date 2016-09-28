@@ -1,10 +1,9 @@
-var express = require('express');
+var config = require('./config/environment/development');
+var express = require('./config/express');
+var mongoose = require('./config/mongoose');
+var db = mongoose();
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function (req, res) {
-    return res.render('index');
+app.listen(config.server.port, function() {
+    console.log('Server running at http://localhost:' + config.server.port);
 });
-
-app.listen(3000);
