@@ -29,7 +29,6 @@ exports.getChart = function(req, res) {
         if (err) return res.status(500).send(err);
         if (req.query.type == 'linear') {
             var days = 7;
-            console.log(req.query.days);
             if (req.query.days) days = req.query.days;
             data.forEach(function(output) {
                 var tmpData = output.data;
