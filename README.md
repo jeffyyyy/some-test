@@ -30,3 +30,4 @@ You must have the following installed:
 
     $ npm start
 
+Then view http://localhost:3000 in your browser
